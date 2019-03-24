@@ -1,0 +1,21 @@
+<form name="$ctrl.formular">
+    <md-input-container>
+        <input type="text" name="person" ng-model="$ctrl.timer.person" required>
+        <div ng-messages="$ctrl.formular.person.$error">
+            <div ng-message="required">Wer hats denn gmacht?</div>
+        </div>
+    </md-input-container>
+
+    <md-input-container>
+        <input type="text" name="activity" ng-model="$ctrl.timer.activity" required>
+        <div ng-messages="$ctrl.formular.activity.$error">
+            <div ng-message="required">Wofür brauchst eig den Timer?</div>
+        </div>
+    </md-input-container>
+
+    <md-button class="md-icon-button"
+               ng-disabled="$ctrl.formular.$invalid"
+               ng-click="$ctrl.addTimer()">
+        <md-icon md-font-icon="material-icons">check</md-icon>
+    </md-button>
+</form>
