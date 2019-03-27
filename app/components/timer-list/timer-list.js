@@ -6,16 +6,12 @@ app.component("timerList", {
     bindings: {}
 });
 
-class TimerList {
 
-    timers = [];
+app.controller("TimerListController", function(TimerService) {
 
-    constructor() {
-    }
+    this.isAdding = false;
 
-    addTimer() {
-        this.timers.push();
-    }
-}
-
-app.controller("TimerListController", TimerList);
+    this.getTimers = ()  => {
+        return TimerService.getTimers();
+    };
+});

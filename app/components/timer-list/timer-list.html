@@ -1,3 +1,9 @@
 <section>
-test
+    <div flex="5" layout="row">
+        <md-button class="md-icon-button" ng-click="$ctrl.isAdding = true">
+            <md-icon md-font-icon="material-icons" class="md-primary">add_circle</md-icon>
+        </md-button>
+    </div>
+    <timer-editor ng-if="$ctrl.isAdding" add="$ctrl.isAdding = false"></timer-editor>
+    <timer ng-repeat="timer in $ctrl.getTimers()" timer="timer"></timer>
 </section>

@@ -1,2 +1,25 @@
-<div>
+<md-divider></md-divider>
+<div layout="row">
+    <div flex="30">
+        <p>{{$ctrl.timer.person}}</p>
+    </div>
+    <div flex="40">
+        <p>{{$ctrl.timer.activity}}</p>
+    </div>
+    <div flex="20">
+        <p>{{$ctrl.timer.outTime | date:'HH:mm:ss':'UTC'}}</p>
+    </div>
+    <div flex="5" layout="row">
+        <md-button class="md-icon-button" ng-click="$ctrl.delete()" ng-if="!$ctrl.timer.isRunning">
+            <md-icon md-font-icon="material-icons">delete</md-icon>
+        </md-button>
+    </div>
+    <div flex="5" layout="row">
+        <md-button ng-if="!$ctrl.timer.isRunning" class="md-icon-button" ng-click="$ctrl.start()">
+            <md-icon md-font-icon="material-icons" class="md-primary">play_circle_filled</md-icon>
+        </md-button>
+        <md-button ng-if="$ctrl.timer.isRunning" class="md-icon-button" ng-click="$ctrl.stop()">
+            <md-icon md-font-icon="material-icons" class="md-warn">pause_circle_filled</md-icon>
+        </md-button>
+    </div>
 </div>
